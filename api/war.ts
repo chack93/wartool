@@ -60,3 +60,22 @@ export async function ListWorkload() {
   return data.WorkloadSummaries;
   */
 }
+
+export async function ListLensReview() {
+  const data = await loadAllPages<WorkloadSummary[]>(
+    ListWorkloadsCommand,
+    {},
+    "WorkloadSummaries"
+  );
+  return data;
+
+  /*
+  const data = await client.send(new ListWorkloadsCommand({}));
+  if (data.NextToken) {
+    const part = await client.send(
+      new ListWorkloadsCommand({ NextToken: data.NextToken })
+    );
+  }
+  return data.WorkloadSummaries;
+  */
+}

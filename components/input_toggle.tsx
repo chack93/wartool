@@ -5,6 +5,7 @@ export type InputToggleProps = {
   name?: string;
   value: boolean;
   onChange: (on: boolean) => void;
+  className?: string;
 };
 
 export default function InputToggle({
@@ -12,6 +13,7 @@ export default function InputToggle({
   name,
   value,
   onChange,
+  className = "",
 }: InputToggleProps): JSX.Element {
   const lblId = useId();
 
@@ -19,7 +21,7 @@ export default function InputToggle({
     <>
       <label
         htmlFor={lblId}
-        className="flex items-center cursor-pointer select-none"
+        className={`flex items-center cursor-pointer select-none ${className}`}
       >
         <div className="relative">
           <input

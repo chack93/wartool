@@ -32,7 +32,7 @@ function Layout({ children }: any): JSX.Element {
 
   return (
     <>
-      <div className="w-screen h-100 bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+      <div className="w-screen min-h-100  bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
         <div className="flex justify-between items-center mx-6 px-2 py-3 mb-3 border-b border-slate-300 dark:border-slate-700">
           <div className="flex items-center gap-2">
             <img src="wart_icon.png" />
@@ -53,7 +53,7 @@ function Layout({ children }: any): JSX.Element {
             <aside className="w-full sm:w-1/4 lg:w-1/5">
               <div className="sticky top-0 w-full px-3">
                 <nav>
-                  <ol className="flex flex-col gap-3">
+                  <ol className="flex flex-col gap-1">
                     {menuList.map(({ href, label }) => (
                       <Link key={href} href={href}>
                         <li
