@@ -2,12 +2,14 @@ import React, { useId } from "react";
 
 export type InputToggleProps = {
   label?: string;
+  name?: string;
   value: boolean;
   onChange: (on: boolean) => void;
 };
 
 export default function InputToggle({
   label,
+  name,
   value,
   onChange,
 }: InputToggleProps): JSX.Element {
@@ -23,6 +25,7 @@ export default function InputToggle({
           <input
             type="checkbox"
             id={lblId}
+            name={name}
             className="sr-only"
             checked={value}
             onChange={(e) => {
@@ -38,12 +41,12 @@ export default function InputToggle({
             } w-14 h-8 rounded-full`}
           ></div>
           <div
-            className={`absolute left-1 top-1 bg-slate-100 dark:bg-slate-800 w-6 h-6 rounded-full transition ${
+            className={`absolute left-1 top-1 bg-slate-100 dark:bg-slate-900 w-6 h-6 rounded-full transition ${
               value ? "translate-x-full" : ""
             }`}
           ></div>
         </div>
-        {label && <div className="ml-3 font-medium">{label}</div>}
+        {label && <div className="ml-3 text-base">{label}</div>}
       </label>
     </>
   );
